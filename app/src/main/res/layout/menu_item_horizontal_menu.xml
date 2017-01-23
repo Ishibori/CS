@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    android:layout_alignParentLeft="true"
+    android:layout_gravity="left"
+    android:clickable="true"
+    android:gravity="left"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/nav_item1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:gravity="left"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/nav_item1_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:src="@drawable/ic_menu_camera" />
+
+        <TextView
+            android:id="@+id/nav_item1_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/nav_settings" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nav_item2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/nav_item2_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:src="@drawable/ic_menu_camera" />
+
+        <TextView
+            android:id="@+id/nav_item2_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/nav_help" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/nav_item3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:gravity="right"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/nav_item3_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:src="@drawable/ic_menu_camera" />
+
+        <TextView
+            android:id="@+id/nav_item3_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/nav_log_out" />
+    </LinearLayout>
+</LinearLayout>
+

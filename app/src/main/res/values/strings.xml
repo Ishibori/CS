@@ -19,6 +19,9 @@
 
     <string name="nav_configure">CONFIGURE</string>
     <string name="nav_upgrade">Upgrade Account</string>
+
     <string name="nav_settings">Settings</string>
     <string name="nav_log_out">Log Out</string>
+    <string name="nav_help">Help</string>
+
 </resources>
