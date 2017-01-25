@@ -1,10 +1,9 @@
 package com.example.ishibori.crowdsensing.navigationmenu;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.support.v7.widget.RecyclerView;
+import android.graphics.Color;
+import android.support.v4.content.res.ResourcesCompat;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -15,9 +14,6 @@ import android.widget.Toast;
 import com.example.ishibori.crowdsensing.R;
 
 import java.util.ArrayList;
-
-import static com.example.ishibori.crowdsensing.navigationmenu.CustomMenuItem.ItemType.Group_Headline;
-import static com.example.ishibori.crowdsensing.navigationmenu.CustomMenuItem.ItemType.Icon_Title;
 
 /**
  * Created by Ishibori on 22/01/2017.
@@ -64,15 +60,30 @@ public class CustomMenuItemAdapter extends BaseAdapter {
                 rowView = inflater.inflate(R.layout.menu_item_group_headline, null);
                 TextView text = (TextView) rowView.findViewById(R.id.menu_text);
                 text.setText(((GroupHeadlineItem) currentItem).title);
+                text.setTextColor(getColorFromId(R.color.darkWhite));
             }
             break;
             case Icon_Title: {
-                rowView = inflater.inflate(R.layout.menu_item_icon_title, null);
+                rowView = inflater.inflate(R.layout.menu_item_standard_item, null);
+                StandardItem standardItem = (StandardItem)currentItem;
+
                 ImageView icon = (ImageView) rowView.findViewById(R.id.menu_icon);
                 TextView text = (TextView) rowView.findViewById(R.id.menu_text);
-                text.setText(((StandardItem) currentItem).title);
+                TextView counter = (TextView) rowView.findViewById(R.id.menu_counter);
 
-                icon.setImageBitmap(((StandardItem) currentItem).icon);
+                icon.setImageBitmap(standardItem.icon);
+                text.setText(standardItem.title);
+                text.setTextColor(getColorFromId(R.color.darkWhite));
+
+                if(standardItem.showRightCounter){
+                    String counterStr = standardItem.counter > 999? "999+" : Integer.toString(standardItem.counter);
+                    counter.setText(counterStr);
+                    counter.setTextColor(getColorFromId(R.color.white));
+                    counter.setVisibility(View.VISIBLE);
+                }
+                else{
+                    counter.setVisibility(View.INVISIBLE);
+                }
             }
             break;
             case Horizontal_Menu: {
@@ -99,6 +110,7 @@ public class CustomMenuItemAdapter extends BaseAdapter {
         }
 
         if(rowView != null) {
+            rowView.setBackgroundColor(getColorFromId(R.color.darkGray));
             rowView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -108,5 +120,9 @@ public class CustomMenuItemAdapter extends BaseAdapter {
         }
 
         return rowView;
+    }
+
+    public int getColorFromId(int colorId){
+        return ResourcesCompat.getColor(context.getResources(), colorId, null);
     }
 }

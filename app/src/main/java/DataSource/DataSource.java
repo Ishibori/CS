@@ -38,22 +38,28 @@ public class DataSource {
 
         Bitmap bmpCamera = getBitmapFromVectorDrawable(globalContext, R.drawable.ic_menu_camera);
 
-        menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.Group_Headline, "CREATE"));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "New Survey"));
+        //menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.Group_Headline, "CREATE"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Create Survey"));
 
-        menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.Group_Headline, "DISCOVER"));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Favorites"));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Public"));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Private"));
+        //menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.Group_Headline, "DISCOVER"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Favorites", 0, true));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Public", 1000, true));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Private", 4, true));
 
-        menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.Group_Headline, "COMMUNICATE"));
+        //menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.Group_Headline, "COMMUNICATE"));
         menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Share"));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Notifications"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Notifications", 0, true));
 
-        menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.Group_Headline, "CONFIGURE"));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Upgrade Account"));
+        //menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.Group_Headline, "ACCOUNT"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Upgrade"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Settings"));
 
-        ArrayList<String> titles = new ArrayList<String>();
+        //menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.Group_Headline, "OTHER"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Privacy Policy"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Help"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Log Out"));
+
+        /*ArrayList<String> titles = new ArrayList<String>();
         titles.add(globalContext.getString(R.string.nav_settings));
         titles.add(globalContext.getString(R.string.nav_help));
         titles.add(globalContext.getString(R.string.nav_log_out));
@@ -64,7 +70,7 @@ public class DataSource {
         icons.add(bmpCamera);
 
         menuItems.add(new HorizontalMenuItem(CustomMenuItem.ItemType.Horizontal_Menu, titles, icons));
-
+*/
         return menuItems;
     }
 

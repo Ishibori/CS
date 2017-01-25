@@ -9,6 +9,15 @@ import android.graphics.Bitmap;
 public class StandardItem extends CustomMenuItem {
     Bitmap icon;
     String title;
+    int counter;
+
+    public StandardItem(ItemType menuItemType, Bitmap icon, String title, int counter, boolean showRightCounter){
+        this.menuItemType = menuItemType;
+        this.icon = icon;
+        this.title = title;
+        this.counter = counter;
+        this.showRightCounter = showRightCounter;
+    }
 
     public StandardItem(ItemType menuItemType, Bitmap icon, String title){
         this.menuItemType = menuItemType;
