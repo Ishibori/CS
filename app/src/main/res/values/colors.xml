@@ -5,9 +5,13 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="white">#FFFFFF</color>
-    <color name="gray">#888888</color>
-    <color name="darkGray">#111111</color>
     <color name="darkWhite">#AAAAAA</color>
+
+    <color name="gray">#888888</color>
+    <color name="darkGray">#171717</color>
+    <color name="middleGray">#202025</color>
+    <color name="borderGray">#232323</color>
+
     <color name="darkBlue">#101017</color>
     <color name="lightBlue">#10AADD</color>
 </resources>

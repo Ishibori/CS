@@ -22,6 +22,10 @@ import java.util.ArrayList;
  */
 
 public class DataSource {
+    public static ArrayList<String> favoriteSurveys;
+    public static ArrayList<String> publicSurveys;
+    public static ArrayList<String> privateSurveys;
+
     public static boolean isInitialized = false;
     public static Context globalContext;
 
@@ -38,26 +42,24 @@ public class DataSource {
 
         Bitmap bmpCamera = getBitmapFromVectorDrawable(globalContext, R.drawable.ic_menu_camera);
 
-        //menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.Group_Headline, "CREATE"));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Create Survey"));
+        menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.GroupHeadline, "MANAGE SURVEYS"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Create New"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Favorites", 0, true));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Public", 1000, true));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Private", 4, true));
 
-        //menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.Group_Headline, "DISCOVER"));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Favorites", 0, true));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Public", 1000, true));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Private", 4, true));
+        menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.GroupHeadline, "COMMUNICATE"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Share"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Notifications", 0, true));
 
-        //menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.Group_Headline, "COMMUNICATE"));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Share"));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Notifications", 0, true));
+        menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.GroupHeadline, "ACCOUNT"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Upgrade"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Settings"));
 
-        //menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.Group_Headline, "ACCOUNT"));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Upgrade"));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Settings"));
-
-        //menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.Group_Headline, "OTHER"));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Privacy Policy"));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Help"));
-        menuItems.add(new StandardItem(CustomMenuItem.ItemType.Icon_Title, bmpCamera, "Log Out"));
+        menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.GroupHeadline, "PRACTICAL"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Privacy Policy"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Help"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Log Out"));
 
         /*ArrayList<String> titles = new ArrayList<String>();
         titles.add(globalContext.getString(R.string.nav_settings));

@@ -5,7 +5,7 @@ package com.example.ishibori.crowdsensing.navigationmenu;
  */
 
 public class CustomMenuItem {
-    public enum ItemType {Empty, Icon_Title, Horizontal_Menu, Group_Headline}
+    public enum ItemType {Empty, StandardItem, HorizontalMenu, GroupHeadline}
     public ItemType menuItemType;
     public boolean showRightCounter;
 }

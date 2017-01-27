@@ -36,8 +36,15 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
         drawer.setDrawerListener(toggle);
         toggle.syncState();
 
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation);
+        DrawerLayout.LayoutParams params = (DrawerLayout.LayoutParams)navigationView.getLayoutParams();
+        params.setMargins(0,getStatusBarHeight(),0,0);
+        navigationView.setLayoutParams(params);
+
+        //NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view)
+
         //NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-//        navigationView.setNavigationItemSelectedListener(this);
+        //navigationView.setNavigationItemSelectedListener(this);
 
         DataSource.init(this);
         menuItems = DataSource.getNavigationMenuItems();
@@ -108,5 +115,13 @@ public class NavigationActivity extends AppCompatActivity implements NavigationV
         return true;
     }
 
+    public int getStatusBarHeight() {
+        int result = 0;
+        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
+        if (resourceId > 0) {
+            result = getResources().getDimensionPixelSize(resourceId);
+        }
+        return result;
+    }
 
 }
