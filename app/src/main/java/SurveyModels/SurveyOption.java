@@ -9,9 +9,11 @@ import java.util.ArrayList;
  */
 
 public class SurveyOption {
-    int order;
+    int optionId;
     String description;
     Bitmap image;
+    int voteCounter;
+
     // sound
     // video
 }

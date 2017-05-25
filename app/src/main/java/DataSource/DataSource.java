@@ -44,6 +44,7 @@ public class DataSource {
 
         menuItems.add(new GroupHeadlineItem(CustomMenuItem.ItemType.GroupHeadline, "MANAGE SURVEYS"));
         menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Create New"));
+        menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Answer Surveys"));
         menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Favorites", 0, true));
         menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Public", 1000, true));
         menuItems.add(new StandardItem(CustomMenuItem.ItemType.StandardItem, bmpCamera, "Private", 4, true));
